@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="DNAbase" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 12.3471
+margin_right = 40.0
+margin_bottom = 26.3471
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

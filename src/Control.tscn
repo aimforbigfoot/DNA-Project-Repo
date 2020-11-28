@@ -1,0 +1,170 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Control.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1024, 600 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 185.052
+margin_top = 152.782
+margin_right = 990.052
+margin_bottom = 580.782
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+margin_right = 805.0
+margin_bottom = 420.0
+rect_min_size = Vector2( 800, 420 )
+follow_focus = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+margin_right = 800.0
+margin_bottom = 390.0
+custom_constants/separation = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 800, 55 )
+custom_constants/separation = 0
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 67.0
+margin_right = 800.0
+margin_bottom = 122.0
+rect_min_size = Vector2( 800, 55 )
+custom_constants/separation = 0
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 134.0
+margin_right = 800.0
+margin_bottom = 189.0
+rect_min_size = Vector2( 800, 55 )
+custom_constants/separation = 0
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 201.0
+margin_right = 800.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 800, 55 )
+custom_constants/separation = 0
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 268.0
+margin_right = 800.0
+margin_bottom = 323.0
+rect_min_size = Vector2( 800, 55 )
+custom_constants/separation = 0
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 335.0
+margin_right = 800.0
+margin_bottom = 390.0
+rect_min_size = Vector2( 800, 55 )
+custom_constants/separation = 0
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 16.0362
+margin_top = -158.58
+margin_right = 56.0362
+margin_bottom = -118.58
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="FileDialog" parent="Popup"]
+visible = true
+margin_right = 219.0
+margin_bottom = 119.0
+popup_exclusive = true
+window_title = "Hello there"
+resizable = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 75.3068
+margin_top = 176.423
+margin_right = 115.307
+margin_bottom = 190.423
+text = "DNA IN"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 72.9284
+margin_top = 231.127
+margin_right = 120.928
+margin_bottom = 245.127
+text = "DNA OUT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 74.8419
+margin_top = 303.23
+margin_right = 161.842
+margin_bottom = 317.23
+text = "Coding Strand"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 49.3068
+margin_top = 360.345
+margin_right = 167.307
+margin_bottom = 391.345
+text = "Non-Coding Strand
+Template Strand"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 98.9014
+margin_top = 432.318
+margin_right = 216.901
+margin_bottom = 463.318
+text = "Protein"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 94.8969
+margin_top = 504.399
+margin_right = 212.896
+margin_bottom = 535.399
+text = "Protein"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 78.4053
+margin_top = 33.5946
+margin_right = 934.405
+margin_bottom = 82.5946
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="about_to_show" from="Popup" to="." method="_on_Popup_about_to_show"]
+[connection signal="file_selected" from="Popup/WindowDialog" to="." method="_on_WindowDialog_file_selected"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]

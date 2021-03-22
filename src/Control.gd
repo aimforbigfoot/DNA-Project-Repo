@@ -25,18 +25,9 @@ func _on_LineEdit_text_changed(new_text: String) -> void:
 	DNAString = new_text
 	codingString = ""
 	noncodingString = ""
-	for a in $VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer.get_children():
-		a.queue_free()
-	for a in $VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer4.get_children():
-		a.queue_free()
-	for a in $VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer5.get_children():
-		a.queue_free()
-	for a in $VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer6.get_children():
-		a.queue_free()
-	for a in $VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer7.get_children():
-		a.queue_free()
-	for a in $VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer8.get_children():
-		a.queue_free()
+	for v in $VBoxContainer/ScrollContainer/VBoxContainer.get_children():
+		for vv in v.get_children():
+			vv.queue_free()
 	DNAThing()
 
 
@@ -353,21 +344,4 @@ func codon_return_aa(codon:String) -> Array:
 			col = Color.darkorchid
 			s = "Gly"
 	return [s,col]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
